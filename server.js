@@ -17,8 +17,9 @@ app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
+
   app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "client/build", index.html));
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
 }
 
@@ -33,6 +34,7 @@ app.post("/payment", (req, res) => {
     amount: req.body.amount,
     currency: "usd",
   };
+
   stripe.charges.create(body, (stripeErr, stripeRes) => {
     if (stripeErr) {
       res.status(500).send({ error: stripeErr });
