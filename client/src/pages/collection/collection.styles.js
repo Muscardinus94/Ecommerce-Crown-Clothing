@@ -14,8 +14,18 @@ export const CollectionPageContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
 
-    & .collection-item {
+    .collection-item {
       margin-bottom: 30px;
     }
+
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    align-items: center;
   }
 `;

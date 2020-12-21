@@ -33,6 +33,27 @@ export const CollectionItemContainer = styled.div`
     position: absolute;
     top: 255px;
     display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      opacity: 0.9;
+      min-width: unset;
+      padding: 0 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+
+      button {
+        opacity: unset;
+      }
+    }
   }
 `;
 
